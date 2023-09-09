@@ -1,18 +1,29 @@
-import { FC } from 'react';
+import { useAppState } from './state/AppStateContext';
+import { Card } from './Card';
 import { ColumnContainer, ColumnTitle } from './styles';
 import { AddNewItem } from './AddNewItem';
+import { addTask } from './state/actions';
 
 type ColumnProps = {
-  text: String;
-  children?: React.ReactNode;
+  text: string;
+  id: string;
 };
 
-export const Column: FC<ColumnProps> = ({ text, children }) => {
+export const Column = ({ text, id }: ColumnProps) => {
+  const { getTasksByListId, dispatch } = useAppState();
+  const tasks = getTasksByListId(id);
+
   return (
     <ColumnContainer>
       <ColumnTitle>{text}</ColumnTitle>
-      {children}
-      <AddNewItem toggleButtonText='+ Add another task' onAdd={console.log} />
+      {tasks.map((task) => (
+        <Card text={task.text} key={task.id} id={task.id} />
+      ))}
+      <AddNewItem
+        toggleButtonText='+ Add another task'
+        onAdd={(text) => dispatch(addTask(text, id))}
+        dark
+      />
     </ColumnContainer>
   );
 };

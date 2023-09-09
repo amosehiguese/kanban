@@ -40,7 +40,7 @@ type AddItemButtonProps = {
 };
 
 export const AddItemButton = styled.button<AddItemButtonProps>`
-  background: hsl(211, 39%, 23%);
+  background: hsl(210, 90%, 70%);
   border-radius: 3px;
   border: none;
   color: ${(props) => (props.dark ? '#000' : '#fff')};
@@ -53,7 +53,7 @@ export const AddItemButton = styled.button<AddItemButtonProps>`
   text-transform: capitalize;
   letter-spacing: 0.1rem;
   &:hover {
-    background: hsl(210, 22%, 49%);
+    background: hsl(210, 80%, 80%);
   }
 `;
 
@@ -66,7 +66,7 @@ export const NewItemFormContainer = styled.div`
 `;
 
 export const NewItemButton = styled.button`
-  background: hsl(211, 39%, 23%);
+  background: hsl(210, 90%, 70%);
   border-radius: 3px;
   border: none;
   box-shadow: none;
