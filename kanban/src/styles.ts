@@ -31,7 +31,7 @@ export const DragPreviewWrapper = styled.div.attrs<DragPreviewWrapperProps>(
 )<DragPreviewWrapperProps>``;
 
 export const DragPreviewContainer = styled.div<DragPreviewContainerProps>`
-  transform: ${(props) => (props.isPreview ? 'rotate(5deg)' : undefined)};
+  transform: ${(props) => (props.isPreview ? 'rotate(5deg)' : null)};
   opacity: ${(props) => (props.isHidden ? 0 : 1)};
 `;
 
