@@ -1,5 +1,7 @@
 # Kanban App Board
 
+![application image](./docs/kanban.png)
+
 Kanban App Board is a simplified version of trello app. It offers tasks and list creation as well as the draggable functionality.
 
 The state of the application is preserved on the backend which allows tasks and list to be preserved.
