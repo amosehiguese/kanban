@@ -24,8 +24,9 @@ export function withInitialState<TProps>(
         try {
           const data = await load();
           setInitialState(data);
-        } catch (e) {
-          setError(e);
+        } catch (err) {
+          const newError = err as Error;
+          setError(newError);
         }
         setIsLoading(false);
       };

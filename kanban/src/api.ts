@@ -23,7 +23,7 @@ export const load = () => {
       if (response.ok) {
         return response.json() as Promise<AppState>;
       } else {
-        throw new Error('Error while saving the state');
+        throw new Error('Error while loading the state');
       }
     }
   );

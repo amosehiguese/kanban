@@ -34,8 +34,6 @@ const appData: AppState = {
   ],
 };
 
-type FCC<P = {}> = FC<PropsWithChildren<P>>;
-
 type AppStateContextProps = {
   draggedItem: DragItem | null;
   lists: List[];
@@ -56,7 +54,7 @@ type AppStateProviderProps = {
   initialState: AppState;
 };
 
-export const AppStateProvider: FCC = withInitialState<AppStateProviderProps>(
+export const AppStateProvider = withInitialState<AppStateProviderProps>(
   ({ children, initialState }) => {
     const [state, dispatch] = useImmerReducer(appStateReducer, initialState);
 
